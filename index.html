@@ -1,1 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fakhri Afrian | Portofolio Mahasiswa</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
 
+  <!-- NAVIGASI -->
+  <header class="navbar">
+    <a href="#beranda" class="logo">FA<span>.</span></a>
+    <button id="tombolMenu" class="menu-toggle" type="button" aria-label="Buka menu">☰</button>
+    <nav id="menuNav">
+      <a href="#tentang">Tentang</a>
+      <a href="#pengalaman">Pengalaman</a>
+      <a href="#interaktif">Latihan DOM</a>
+      <a href="#workshop">Workshop</a>
+      <a href="#tugas">To-do</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- BERANDA (Latihan 1 & 2: ubah teks dan event click) -->
+    <section id="beranda" class="hero">
+      <div class="hero-text">
+        <p class="sapaan">Halo, saya</p>
+        <h1 id="judul">Latihan DOM</h1>
+        <p id="pesan" class="subjudul">Belum ada tindakan.</p>
+        <div class="hero-aksi">
+          <button id="tombolAksi" type="button" class="btn">Klik Saya</button>
+          <a href="#kontak" class="btn btn-garis">Hubungi Saya</a>
+        </div>
+      </div>
+      <div class="hero-foto">
+        <img id="fotoProfil" src="foto.png" alt="Foto Fakhri Afrian">
+        <div id="fotoCadangan" class="foto-cadangan" hidden>FA</div>
+      </div>
+    </section>
+
+    <!-- TENTANG (Latihan 3: classList toggle + hide/show) -->
+    <section id="tentang" class="bagian">
+      <h2>Tentang Saya</h2>
+      <div class="grid-2">
+        <div>
+          <p id="teksGaya" class="deskripsi">
+            Saya mahasiswa Teknik Informatika di Universitas Pelita Bangsa dengan
+            latar belakang kerja di dunia industri manufaktur dan R&amp;D. Saya sedang
+            memperdalam pemrograman web untuk menggabungkan pengalaman proses
+            produksi dengan kemampuan membangun aplikasi.
+          </p>
+          <div class="baris-tombol">
+            <button id="tombolGaya" type="button" class="btn btn-kecil">Sorot / Perbesar Teks</button>
+            <button id="tombolSembunyi" type="button" class="btn btn-kecil btn-garis">Sembunyikan Detail</button>
+          </div>
+          <p id="detailTambahan" class="catatan">
+            Tertarik pada analisis proses, otomasi, dan pengembangan web. Terus belajar
+            HTML, CSS, dan JavaScript.
+          </p>
+        </div>
+
+        <div class="kartu">
+          <h3>Data Pribadi</h3>
+          <dl class="data">
+            <dt>Nama</dt><dd>Fakhri Afrian</dd>
+            <dt>Usia</dt><dd><span id="usiaOtomatis">24</span> tahun</dd>
+            <dt>Tanggal lahir</dt><dd>03-10-2002</dd>
+            <dt>Jenis kelamin</dt><dd>Laki-laki</dd>
+            <dt>Lulusan</dt><dd>SMK Mitra Industri MM2100</dd>
+            <dt>Kuliah</dt><dd>Teknik Informatika, Universitas Pelita Bangsa</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- PENGALAMAN -->
+    <section id="pengalaman" class="bagian bagian-abu">
+      <h2>Pengalaman Kerja</h2>
+      <ol class="timeline">
+        <li>
+          <span class="tahun">2023 – Sekarang</span>
+          <h3>Process Engineer – Pilot Engineering Team</h3>
+          <p class="perusahaan">PT. LG Electronics R&amp;D Center</p>
+          <p>ST Analysis, penyusunan Working Instructions, administrasi, dan TMO Analysis.</p>
+        </li>
+        <li>
+          <span class="tahun">2022 – 2023</span>
+          <h3>Operator Produksi</h3>
+          <p class="perusahaan">PT. Denso Manufacturing Indonesia (Fajar Plant)</p>
+          <p>Mengoperasikan mesin produksi sesuai standar kerja.</p>
+        </li>
+        <li>
+          <span class="tahun">2021 – 2022</span>
+          <h3>Operator Produksi</h3>
+          <p class="perusahaan">PT. Posmi Steel Indonesia</p>
+          <p>Mengoperasikan mesin stamping press.</p>
+        </li>
+        <li>
+          <span class="tahun">2020 – 2021</span>
+          <h3>Maintenance Operator</h3>
+          <p class="perusahaan">PT. Sunstar Engineering Indonesia</p>
+          <p>Mendukung perawatan mesin dan fasilitas produksi.</p>
+        </li>
+        <li>
+          <span class="tahun">2019 – 2020</span>
+          <h3>Purchasing Administration</h3>
+          <p class="perusahaan">PT. Roki Indonesia</p>
+          <p>Administrasi pembelian dan dokumentasi purchasing.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- INTERAKTIF (Latihan 4: event input + penghitung karakter) -->
+    <section id="interaktif" class="bagian">
+      <h2>Latihan DOM &amp; Event</h2>
+      <div class="grid-2">
+        <div class="kartu">
+          <h3>Penghitung Karakter</h3>
+          <label for="namaInput">Nama:</label>
+          <input type="text" id="namaInput" maxlength="40" placeholder="Ketik nama Anda">
+          <p>Jumlah karakter: <span id="jumlahKarakter">0</span> / 40</p>
+          <p id="sapaLangsung" class="catatan"></p>
+        </div>
+        <div class="kartu">
+          <h3>Ringkasan Cepat</h3>
+          <p>Tombol di bawah memakai <code>classList.add()</code>, <code>remove()</code>, dan <code>toggle()</code>.</p>
+          <div class="baris-tombol">
+            <button id="btnAdd" type="button" class="btn btn-kecil">add</button>
+            <button id="btnRemove" type="button" class="btn btn-kecil btn-garis">remove</button>
+            <button id="btnToggle" type="button" class="btn btn-kecil btn-garis">toggle</button>
+          </div>
+          <p id="kotakKelas" class="deskripsi">Kotak uji classList.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKSHOP (Latihan 5 + Mini Project) -->
+    <section id="workshop" class="bagian bagian-abu">
+      <h2>Pendaftaran Workshop</h2>
+      <div class="grid-2">
+        <form id="formPendaftaran" class="kartu" novalidate>
+          <h3>Form Pendaftaran</h3>
+
+          <label for="nama">Nama lengkap</label>
+          <input id="nama" name="nama" type="text" autocomplete="name">
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email">
+
+          <label for="usia">Usia</label>
+          <input id="usia" name="usia" type="number" min="17" max="100">
+
+          <label for="sesi">Sesi workshop</label>
+          <select id="sesi" name="sesi">
+            <option value="">-- Pilih sesi --</option>
+            <option value="HTML &amp; CSS Dasar">HTML &amp; CSS Dasar</option>
+            <option value="JavaScript DOM">JavaScript DOM</option>
+            <option value="Form &amp; Validasi">Form &amp; Validasi</option>
+          </select>
+
+          <label for="catatanDaftar">Catatan (opsional)</label>
+          <textarea id="catatanDaftar" maxlength="120" rows="3"></textarea>
+          <p class="kecil">Sisa karakter: <span id="sisaCatatan">120</span></p>
+
+          <div class="baris-tombol">
+            <button type="submit" class="btn">Daftar</button>
+            <button type="button" id="tombolReset" class="btn btn-garis">Reset</button>
+          </div>
+          <p id="pesanForm" aria-live="polite"></p>
+        </form>
+
+        <div class="kartu">
+          <h3>Ringkasan Langsung</h3>
+          <dl class="data">
+            <dt>Nama</dt><dd id="rNama">-</dd>
+            <dt>Email</dt><dd id="rEmail">-</dd>
+            <dt>Usia</dt><dd id="rUsia">-</dd>
+            <dt>Sesi</dt><dd id="rSesi">-</dd>
+          </dl>
+          <p id="infoSesi" class="catatan" aria-live="polite">Belum ada sesi dipilih.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TO-DO (Latihan 6) -->
+    <section id="tugas" class="bagian">
+      <h2>Daftar Tugas</h2>
+      <div class="kartu lebar">
+        <label for="inputTugas">Tugas baru</label>
+        <div class="baris-input">
+          <input id="inputTugas" type="text" placeholder="Contoh: Kerjakan Lab6Web">
+          <button id="tambahTugas" type="button" class="btn">Tambah</button>
+        </div>
+        <p id="pesanTugas" aria-live="polite"></p>
+        <ul id="daftarTugas"></ul>
+      </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section id="kontak" class="bagian bagian-abu">
+      <h2>Kontak</h2>
+      <div class="grid-2">
+        <div class="kartu">
+          <h3>Hubungi Saya</h3>
+          <p><strong>Email:</strong> <a id="tautanEmail" href="#">fakhri789123@gmail.com</a></p>
+          <p><strong>Telepon:</strong> <a id="tautanTelp" href="#">081289202437</a></p>
+          <p><strong>Kampus:</strong> Universitas Pelita Bangsa</p>
+        </div>
+        <div class="kartu">
+          <h3>Referensi Belajar</h3>
+          <p><a id="tautanMDN" href="#">MDN Web Docs – DOM</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="tahunSekarang">2026</span> Fakhri Afrian. Dibuat dengan HTML, CSS, dan JavaScript.</p>
+  </footer>
+
+</body>
+</html>
